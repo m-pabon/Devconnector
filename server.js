@@ -6,6 +6,9 @@ const connectDB = require('./config/db')
 // Connect Database
 connectDB();
 
+//Init Middleware (Body parser for parsing request bodies aka express validator)
+app.use(express.json({ extended: false }));
+
 app.get('/', (req,res) => res.send('API Running'));
 
 // Define Routes
